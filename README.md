@@ -2,10 +2,10 @@
 
 Technologies used:
 
-- React
+- [React](https://react.dev/)
 - TypeScript
 - 🚧 Firebase
-- 🚧 Some UI library (Stitches / Emotion / TailwindCSS)
+- [Chakra UI](https://chakra-ui.com/)
 - Vite
 
 ## Local development
