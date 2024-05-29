@@ -1,5 +1,5 @@
 import { Box, Img, Link, Stack, Text } from '@chakra-ui/react';
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import fluxonLogo from './assets/fluxon-logo.svg';
 import FirebaseDemo from './FirebaseDemo';
