@@ -9,7 +9,7 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ChakraProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/ucu-fluxon-summer-school-boilerplate-test">
         <App />
       </BrowserRouter>
     </ChakraProvider>
