@@ -8,10 +8,9 @@ import FirebaseDemo from './components/FirebaseDemo.tsx';
 import MainLayout from './components/layout/MainLayout.tsx';
 
 export const App = () => {
-  console.log('App')
   return (
     <Routes>
-      <Route path="" element={<EventPage />} />
+      <Route path="/" element={<EventPage />} />
       <Route path="/firebase-demo" element={<FirebaseDemo />} />
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/dashboard" element={<DashboardPage />} />
