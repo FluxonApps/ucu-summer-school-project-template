@@ -50,6 +50,7 @@ module.exports = {
     '@typescript-eslint/no-unnecessary-condition': ['warn', { allowConstantLoopConditions: true }],
     '@typescript-eslint/no-duplicate-enum-values': 'error',
     '@typescript-eslint/no-mixed-enums': 'error',
+    '@typescript-eslint/no-explicit-any': 'off',
 
     /// Import
     'import/default': 'off',

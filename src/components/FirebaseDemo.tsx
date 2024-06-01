@@ -3,7 +3,7 @@ import { collection, addDoc, updateDoc, deleteDoc, doc, query, CollectionReferen
 import { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
-import { db } from '../firebase.config';
+import { db } from '../../firebase.config';
 
 interface User {
   id: string;
