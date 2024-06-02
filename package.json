@@ -1,6 +1,6 @@
 {
   "name": "ucu-fluxon-summer-school-boilerplate-test",
-  "homepage": "https://dannymatkovsky.github.io/ucu-fluxon-summer-school-boilerplate-test",
+  "homepage": "<URL of github page, e.g. https://dannymatkovsky.github.io/ucu-fluxon-summer-school-boilerplate-test>",
   "private": true,
   "version": "0.0.0",
   "type": "module",
