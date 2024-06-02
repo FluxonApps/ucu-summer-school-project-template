@@ -1,5 +1,5 @@
 import { HStack, Img, Link, Stack, Text } from '@chakra-ui/react';
-import { Routes, Route } from 'react-router-dom';
+import { Link as RouterLink, Routes, Route } from 'react-router-dom';
 
 import fluxonLogo from './assets/fluxon-logo.svg';
 import AuthPage from './components/AuthPage.tsx';
@@ -27,9 +27,9 @@ const EventPage = () => {
         </Link>
         <Text color="white">UCU x Fluxon Product Development Bootcamp</Text>
         <HStack mt={4} color="blue.100">
-          <Link href="/firebase-demo">Firebase demo</Link>
+          <Link as={RouterLink} to="/firebase-demo">Firebase demo</Link>
           <Text>|</Text>
-          <Link href="/auth">Authenticate</Link>
+          <Link as={RouterLink} to="/auth">Authenticate</Link>
         </HStack>
       </Stack>
     </MainLayout>
