@@ -1,5 +1,6 @@
 {
-  "name": "ucu-fluxon-summer-school-boilerplate",
+  "name": "ucu-fluxon-summer-school-boilerplate-test",
+  "homepage": "https://dannymatkovsky.github.io/ucu-fluxon-summer-school-boilerplate-test",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
@@ -15,6 +18,7 @@
     "@emotion/styled": "^11.11.5",
     "firebase": "^10.12.2",
     "framer-motion": "^11.2.5",
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
