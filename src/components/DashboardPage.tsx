@@ -1,4 +1,3 @@
-import { Box, Button, Spinner, Text } from '@chakra-ui/react';
 import { getAuth } from 'firebase/auth';
 import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
 import { Navigate } from 'react-router-dom';
@@ -11,7 +10,7 @@ const DashboardPage = () => {
 
   // Do not show page content until auth state is fetched.
   if (userLoading) {
-    return <Spinner />;
+    return null;
   }
 
   // If user isn't signed in, redirect to auth page.
@@ -20,12 +19,10 @@ const DashboardPage = () => {
   }
 
   return (
-    <Box p={6}>
-      <Text>Welcome to your app!</Text>
-      <Button onClick={signOut} isDisabled={isSigningOut} isLoading={isSigningOut}>
-        Sign out
-      </Button>
-    </Box>
+    <div className="p-6">
+      <p>Welcome to your app!</p>
+      <button className="bg-green-500" onClick={signOut} disabled={isSigningOut}>Sign out</button>
+    </div>
   );
 };
 

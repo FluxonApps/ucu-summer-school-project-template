@@ -1,4 +1,3 @@
-import { HStack, Img, Link, Stack, Text } from '@chakra-ui/react';
 import { Routes, Route } from 'react-router-dom';
 
 import fluxonLogo from './assets/fluxon-logo.svg';
@@ -21,17 +20,17 @@ export const App = () => {
 const EventPage = () => {
   return (
     <MainLayout>
-      <Stack spacing={4} justifyContent="center" alignItems="center" h="full">
-        <Link target="_blank" href="https://fluxon.com">
-          <Img w={300} src={fluxonLogo} />
-        </Link>
-        <Text color="white">UCU x Fluxon Product Development Bootcamp</Text>
-        <HStack mt={4} color="blue.100">
-          <Link href="/firebase-demo">Firebase demo</Link>
-          <Text>|</Text>
-          <Link href="/auth">Authenticate</Link>
-        </HStack>
-      </Stack>
+      <div className="flex flex-col gap-4 items-center justify-center h-full">
+        <a target="_blank" href="https://fluxon.com">
+          <img width={300} src={fluxonLogo} alt="Fluxon logo" />
+        </a>
+        <p>UCU x Fluxon Product Development Bootcamp</p>
+        <div className="flex mt-4 gap-2 text-blue-100">
+          <a href="/firebase-demo">Firebase demo</a>
+          <p>|</p>
+          <a href="/auth">Authenticate</a>
+        </div>
+      </div>
     </MainLayout>
   );
 };

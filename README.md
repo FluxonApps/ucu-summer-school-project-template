@@ -9,7 +9,7 @@ Technologies used:
 - [React](https://react.dev/) - UI framework/library
 - [TypeScript](https://www.typescriptlang.org/) - strict types for JavaScript
 - [Firebase](https://firebase.google.com/docs) - authentication functionality (Firebase Auth), database (Firestore), web app hosting (Firebase Hosting). Basically, it serves as the backend for our app.
-- [Chakra UI](https://chakra-ui.com/) - UI component library
+- [Tailwind CSS](https://tailwindcss.com//) - CSS framework
 - [Vite](https://vitejs.dev/) - thing that bundles all the above together. A tool that takes all the source code files and bundles them together to build the app 🛠️
 
 ## Local development
