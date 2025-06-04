@@ -1,4 +1,3 @@
-import { Box, Button, Flex, Input, Stack, Text, useToast } from '@chakra-ui/react';
 import { getAuth } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { ChangeEvent, FormEvent, useState } from 'react';
@@ -16,8 +15,6 @@ import MainLayout from './layout/MainLayout.tsx';
 const auth = getAuth();
 
 const AuthPage = () => {
-  const toast = useToast();
-
   const [user] = useAuthState(auth);
   const [signInWithEmailAndPassword, , signInLoading] = useSignInWithEmailAndPassword(auth);
   const [createUserWithEmailAndPassword, , signUpLoading] = useCreateUserWithEmailAndPassword(auth);
@@ -46,14 +43,10 @@ const AuthPage = () => {
       const res = await signInWithEmailAndPassword(email, password);
       if (!res) throw new Error();
 
-      toast({ status: 'success', description: 'Successfully signed in!' });
+      alert('Successfully signed in!');
     } catch (e) {
       console.error(e);
-      toast({
-        status: 'error',
-        title: 'Error',
-        description: 'Failed to sign in. Please, try again.',
-      });
+      alert('Failed to sign in. Please, try again.');
     }
   };
 
@@ -66,14 +59,10 @@ const AuthPage = () => {
       const userDocRef = doc(db, 'users', res.user.uid);
       await setDoc(userDocRef, { email });
 
-      toast({ status: 'success', description: 'Successfully signed up!' });
+      alert('Successfully signed up!');
     } catch (e) {
       console.error(e);
-      toast({
-        status: 'error',
-        title: 'Error',
-        description: 'Failed to create a new user. Please, try again.',
-      });
+      alert('Failed to create a new user. Please, try again.');
     }
   };
 
@@ -94,35 +83,38 @@ const AuthPage = () => {
 
   return (
     <MainLayout>
-      <Flex w="full" h="full" alignItems="center" justifyContent="space-between">
-        <Box mx="auto" as="form" onSubmit={handleAuth}>
-          <Stack spacing={4} w={500} bg="white" rounded="md" p={8}>
-            <Text fontSize="2xl">{showSignIn ? 'Sign in' : 'Sign up'}</Text>
-            <Input placeholder="Email" type="email" onChange={handleEmailChange} value={email} required />
-            <Input
+      <div className="flex w-full h-full items-center justify-between">
+        <form className="mx-auto" onSubmit={handleAuth}>
+          <div className="flex flex-col gap-4 w-[500px] bg-white rounded-md p-8">
+            <h2 className="text-2xl! text-black">{showSignIn ? 'Sign in' : 'Sign up'}</h2>
+            <input
+              className="border border-solid border-slate-200 rounded-lg py-2 px-4 text-black"
+              placeholder="Email"
+              type="email"
+              name="email"
+              onChange={handleEmailChange}
+              value={email}
+              required
+            />
+            <input
+              className="border border-solid border-slate-200 rounded-lg py-2 px-4 text-black"
               placeholder="Password"
               type="password"
+              name="password"
               onChange={handlePasswordChange}
               value={password}
               minLength={6}
               required
             />
-            <Button type="submit" colorScheme="blue" isDisabled={loading} isLoading={loading}>
+            <button type="submit" disabled={loading} className="bg-blue-400 rounded-lg py-2 font-medium">
               Submit
-            </Button>
-            <Button
-              mt={4}
-              fontSize="sm"
-              fontWeight="normal"
-              variant="link"
-              onClick={switchAuthMode}
-              isDisabled={loading}
-            >
+            </button>
+            <button className="mt-4 text-sm text-black text-slate-400" onClick={switchAuthMode} disabled={loading}>
               {showSignIn ? 'Create a new account?' : 'Already have an account?'}
-            </Button>
-          </Stack>
-        </Box>
-      </Flex>
+            </button>
+          </div>
+        </form>
+      </div>
     </MainLayout>
   );
 };

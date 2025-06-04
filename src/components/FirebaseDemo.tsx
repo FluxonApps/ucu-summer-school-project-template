@@ -1,4 +1,3 @@
-import { Box, Button, Flex, Heading, Input, Stack, HStack, Spinner } from '@chakra-ui/react';
 import { collection, addDoc, updateDoc, deleteDoc, doc, query, CollectionReference } from 'firebase/firestore';
 import { useState } from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
@@ -10,7 +9,8 @@ interface User {
   name: string;
   mark: number;
 }
-export function FirebaseDemo() {
+
+function FirebaseDemo() {
   const [newName, setNewName] = useState('');
   const [newMark, setNewMark] = useState(0);
 
@@ -34,55 +34,55 @@ export function FirebaseDemo() {
   };
 
   if (usersLoading) {
-    return <Spinner />;
+    return null;
   }
 
   if (usersError) {
-    return <Box>Error fetching users</Box>;
+    return <div>Error fetching users</div>;
   }
 
   return (
-    <Flex flexDir="column" gap="8" padding="6">
-      <Flex flexDir="column" gap="6" border="1px" borderColor="gray.200" width="20%" px="6" py="8">
-        <Stack spacing="3">
-          <Input
+    <div className="flex flex-col gap-8 p-6">
+      <div className="flex flex-col gap-6 border border-gray-200 w-[20%] px-6 py-8">
+        <div className="flex flex-col gap-3">
+          <input
+            className="border"
             onChange={(event) => {
               setNewName(event.target.value);
             }}
             placeholder="Name..."
-            size="sm"
           />
-          <Input
+          <input
+            className="border"
             type="number"
             placeholder="Mark..."
             onChange={(event) => {
               setNewMark(Number(event.target.value));
             }}
-            size="sm"
           />
-        </Stack>
-        <Button width="50%" size="sm" colorScheme="green" onClick={createUser}>
+        </div>
+        <button className="w-[50%] bg-green-500" onClick={createUser}>
           Create User
-        </Button>
-      </Flex>
-      <Flex gap="4" flexWrap="wrap">
+        </button>
+      </div>
+      <div className="flex flex-wrap gap-4">
         {users &&
           users.docs.map((user) => (
-            <Box gap="6" border="1px" borderColor="gray.300" width="20%" px="6" py="8" key={user.id}>
-              <Heading>Name: {user.data().name}</Heading>
-              <Heading>Mark: {user.data().mark}</Heading>
-              <HStack gap="4" mt="4">
-                <Button size="sm" colorScheme="green" onClick={() => updateUser(user.id, user.data().mark)}>
+            <div className="w-[20%] gap-6 border border-gray-300 px-6 py-8" key={user.id}>
+              <p>Name: {user.data().name}</p>
+              <p>Mark: {user.data().mark}</p>
+              <div className="flex flex-col gap-4 mt-4">
+                <button className="bg-green-500" onClick={() => updateUser(user.id, user.data().mark)}>
                   Increase Mark
-                </Button>
-                <Button size="sm" colorScheme="red" onClick={() => deleteUser(user.id)}>
+                </button>
+                <button className="bg-red-500" onClick={() => deleteUser(user.id)}>
                   Delete User
-                </Button>
-              </HStack>
-            </Box>
+                </button>
+              </div>
+            </div>
           ))}
-      </Flex>
-    </Flex>
+      </div>
+    </div>
   );
 }
 

@@ -1,10 +1,7 @@
-import { Box } from '@chakra-ui/react';
-import { FC } from 'react';
+import { PropsWithChildren } from 'react';
 
-const MainLayout: FC<any> = ({ children }) => (
-  <Box h="full" bg="radial-gradient(at left top, #050311 20%, #2A53C7 100%)">
-    {children}
-  </Box>
+const MainLayout = ({ children }: PropsWithChildren) => (
+  <div className="h-full bg-[radial-gradient(at_left_top,_#050311_20%,_#2A53C7_100%)]">{children}</div>
 );
 
 export default MainLayout;
