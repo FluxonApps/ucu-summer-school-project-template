@@ -19,7 +19,7 @@ This bulleted list will help you set up your machine for local development.
 1. All following commands use a shell terminal (bash, zsh, whatever). On MacOS and Linux, it is available for you out of the box. On Windows, you have to either install WSL (which is time consuming), or Git Bash. This answer contains some useful links: https://superuser.com/a/1763710
 1. Create a GitHub account (if haven't yet). Don't forget to pick a cool username 😎
 1. Install Git (if haven't yet or not available): https://github.com/git-guides/install-git
-1. Install Node.js 20: follow instructions on https://nodejs.org/en/download/package-manager
+1. Install Node.js 22: follow instructions on https://nodejs.org/en/download/package-manager
 1. Install VSCode or your preferred text editor / IDE: https://code.visualstudio.com/Download
 1. Configure your editor to run ESLint on file save. This will ensure the code looks great for everyone the same way 💅
    - if using VSCode, paste the following snippet into .vscode/settings.json file (create if missing): `{"typescript.tsdk": "node_modules/typescript/lib","editor.codeActionsOnSave": {"source.fixAll.eslint": "explicit"},"[json]": {"editor.defaultFormatter": "vscode.json-language-features","editor.formatOnSave": true}}`

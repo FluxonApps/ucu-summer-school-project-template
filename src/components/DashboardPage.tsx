@@ -1,6 +1,6 @@
 import { getAuth } from 'firebase/auth';
 import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
-import { Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router';
 
 const auth = getAuth();
 

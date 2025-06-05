@@ -6,7 +6,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useSignInWithEmailAndPassword,
 } from 'react-firebase-hooks/auth';
-import { Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router';
 
 import { db } from '../../firebase.config.ts';
 
