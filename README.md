@@ -82,7 +82,7 @@ Hey, some of you might be interested in setting up the deployment of your team's
 
 You could do this manually, or via an automated GitHub Actions workflow. Just ask your mentor!
 
-## USEFUL MATERIALS
+## Useful Materials
 
 > Before you proceed with this section, **REMEMBER THERE ARE NO STUPID OR LAME QUESTIONS**. If you're feeling like you don't know something, this means there's room for improvement – so just say it out loud and your mentor or peers will help you! We're all here to learn something new ([even mentors!](https://github.com/user-attachments/assets/c0c34e3a-8c5b-4bd8-9a8e-41c66bacece5)), so let's actually have a great time together!!!
 
