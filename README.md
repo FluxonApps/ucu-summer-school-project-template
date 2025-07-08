@@ -72,9 +72,15 @@ npm run dev
 
 6. Go to http://localhost:5173/ to see this wonderful project live
 
-7. Make changes to project files within the src/ folder to see them reflected on the page
+7. Open the project in VSCode (if haven't yet)
 
-8. You should be all set! Now you can start contributing to the project! 🤘
+```shell
+code .
+```
+
+8. Make changes to project files within the src/ folder to see them reflected on the page
+
+9. You should be all set! Now you can start contributing to the project! 🤘
 
 ## Deployment
 
