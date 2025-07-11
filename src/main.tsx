@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router';
 
 import './index.css';
-import AuthPage from './components/AuthPage.tsx';
-import DashboardPage from './components/DashboardPage.tsx';
-import FirebaseDemo from './components/FirebaseDemo.tsx';
-import HomePage from './components/HomePage.tsx';
+import AuthPage from './pages/AuthPage.tsx';
+import DashboardPage from './pages/DashboardPage.tsx';
+import FirebaseDemo from './pages/FirebaseDemo.tsx';
+import HomePage from './pages/HomePage.tsx';
 
 const AppRoutes = () => (
   <Routes>

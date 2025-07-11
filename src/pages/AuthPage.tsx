@@ -10,7 +10,7 @@ import { Navigate } from 'react-router';
 
 import { db } from '../../firebase.config.ts';
 
-import MainLayout from './layout/MainLayout.tsx';
+import MainLayout from '../components/layout/MainLayout.tsx';
 
 const auth = getAuth();
 
